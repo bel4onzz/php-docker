@@ -1,0 +1,30 @@
+<div>
+    <h2>Brief code review</h2>
+    <div>
+        <h4>Complex Logic in ageByOneDay Method:</h4>
+        <p style="padding-left: 20px;">The ageByOneDay method has complex nested conditional statements that make it difficult to read and maintain.</p>
+    </div>
+    <div>
+        <h4>Duplicated Code:</h4>
+        <p style="padding-left: 20px;">There are several blocks of code that are repeated for different item types, especially regarding the updates to value and sellIn. This violates the DRY (Don't Repeat Yourself) principle. </p>
+    </div>
+    <div>
+        <h4>Missing Type Declarations:</h4>
+        <p style="padding-left: 20px;">The properties $name, $value, and $sellIn lack explicit types.</p>
+    </div>
+    <div>
+        <h4>Method Naming Consistency:</h4>
+        <p style="padding-left: 20px;">The name() and value() methods are ambiguous as they could imply an action rather than a getter.</p>
+    </div>
+    <div>
+        <h4>Encapsulation Violation via Direct Property Exposure:</h4>
+        <p style="padding-left: 20px;">Exposing the properties through methods like name() and value() without control may violate encapsulation principles.</p>
+    </div>
+    <div>
+        <h4>Violation of the Single Responsibility Principle:</h4>
+        <p style="padding-left: 20px;">
+            The ageByOneDay method is responsible for multiple actions: calculating the new value based on the item type, modifying the sellIn value, and handling different conditions for various items. 
+            This can lead to difficulties in testing and maintaining the code.
+        </p>
+    </div>
+</div>
