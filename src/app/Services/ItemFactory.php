@@ -8,7 +8,14 @@ use Exception;
 class ItemFactory
 {
     private array $itemTypes = [];
-
+    
+    /**
+     * register
+     *
+     * @param  string $type
+     * @param  string $class
+     * @return void
+     */
     public function register(string $type, string $class): void
     {
         if (!is_subclass_of($class, ItemInterface::class)) {
@@ -21,7 +28,16 @@ class ItemFactory
             $this->itemTypes[$type] = $class;
         }
     }
-
+    
+    /**
+     * create
+     *
+     * @param  string $type
+     * @param  string $name
+     * @param  int $price
+     * @param  int $sellIn
+     * @return ItemInterface
+     */
     public function create(string $type, string $name, int $price, int $sellIn): ItemInterface
     {
         if (!isset($this->itemTypes[$type])) {
