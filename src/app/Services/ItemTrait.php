@@ -56,7 +56,12 @@ trait ItemTrait
         ],
     ];
     private array $response = [];
-
+    
+    /**
+     * createItems
+     *
+     * @return array
+     */
     protected function createItems(): array
     {
         $factory = new ItemFactory();

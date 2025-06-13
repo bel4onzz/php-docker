@@ -7,12 +7,25 @@ use App\Contracts\ItemInterface;
 class WorldCupTicket implements ItemInterface
 {
     private array $agedByDays;
-
+    
+    /**
+     * __construct
+     *
+     * @param  string $name
+     * @param  int $value
+     * @param  int $sellIn
+     * @return void
+     */
     public function __construct(private string $name, private int $value, private int $sellIn)
     {
         $this->agedByDays[$name] = 0;
     }
-
+    
+    /**
+     * ageByOneDay
+     *
+     * @return array
+     */
     public function ageByOneDay(): array
     {
         $daysLeft = $this->sellIn - $this->agedByDays[$this->name];
